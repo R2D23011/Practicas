@@ -13,10 +13,12 @@
  */
 
 import static five.Animals.showAnimalSound;
-
+import static FiveExtra.Employees.*;
 
 public class Five {
     public static void main(String[] args) {
-        showAnimalSound();
+        //showAnimalSound();
+
+        showEmployeesInfo();
     }
 }
