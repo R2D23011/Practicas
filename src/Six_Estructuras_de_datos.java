@@ -59,14 +59,13 @@ public class Six_Estructuras_de_datos {
                     String name = sc.nextLine();
                     System.out.println("Ingrese el numero de tlf: [04246789504] 11 digitos");
                     String number = sc.nextLine();
-                    if (number.length() != 11) {
-                        System.out.println("Ingresa un numero de Tlf valido\n");
-
-                    } else {
-                        Long numberL = Long.parseLong(number);
-                        myDict.put(name, numberL);
-                        System.out.println("Contacto agregado exitosamente\n");
+                    while(number.length() != 11) {
+                        System.out.println("Ingresa un numero de tlf valido:");
+                        number= sc.nextLine();
                     }
+                    Long numberL = Long.parseLong(number);
+                    myDict.put(name, numberL);
+                    System.out.println("Contacto agregado exitosamente\n");
                     break;
 
 
@@ -76,7 +75,7 @@ public class Six_Estructuras_de_datos {
                     for (Map.Entry<String, Long> entry : myDict.entrySet()) {
                         String clave = entry.getKey();
                         Long valor = entry.getValue();
-                        System.out.println("Nombre: " + clave + "  Tlf: " + valor+"\n");
+                        System.out.println("Nombre: " + clave + "  Tlf: " + valor);
                     }
                     String nameM = sc.nextLine();
                     if(myDict.containsKey(nameM)){
