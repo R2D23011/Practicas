@@ -78,15 +78,20 @@ public class Six_Estructuras_de_datos {
                         System.out.println("Nombre: " + clave + "  Tlf: " + valor);
                     }
                     String nameM = sc.nextLine();
-                    if(myDict.containsKey(nameM)){
+                    while(!myDict.containsKey(nameM)){
+                        System.out.println("Contacto no encontrado\n");
+                        nameM = sc.nextLine();
+                    }
                         System.out.println("Cambiar numero de telefono: formato [04242345678] 11 digitos");
-                        Long newNumber = Long.parseLong(sc.nextLine());
+                        String numberUpdate = sc.nextLine();
+                        while (numberUpdate.length() != 11){
+                            System.out.println("Ingresa un numero de tlf valido:");
+                            numberUpdate = sc.nextLine();
+                        }
+                        Long newNumber = Long.parseLong(numberUpdate);
                         myDict.put(nameM, newNumber);
                         System.out.println("Contacto actualizado exitosamente");
-                        break;
-                    }else{
-                        System.out.println("Contacto no encontrado\n");
-                    }
+
                     break;
 
 
